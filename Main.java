@@ -1,5 +1,7 @@
-import java.util.Scanner;
 package com.company;
+
+import java.util.Scanner;
+
 
 
 /**
@@ -21,8 +23,8 @@ public class Main extends TriangleDefine {
             double c = in.nextDouble();
 
             TriangleDefine triangle = new TriangleDefine();//Declaration of variable of class TrianleDefine
-            triangle.triangleExists(a, b, c);//вызов метода с параметрами a,b,c, который проверяет наличие треугольника
-            triangle.triangleWithDifferentSides(a, b, c);//вызов метода с пераметрами a,b,c, который проверяет разные стороны
+            triangle.triangleExists(a, b, c);//вызов метода с параметрами a,b,c, который проверяет наличие треугольника,его разносторонность,тип
+            // в зависимости от угла
             triangle.triangleIsosceles(a, b, c);//вызов метода с параметрами a,b,c,который проверяет треугольник на равнобедренность
             triangle.triangleEquilateral(a, b, c);//вызов метода с параметрами a,b,c,который проверяет треугольник на равносторонность
 

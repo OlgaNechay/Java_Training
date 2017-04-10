@@ -1,6 +1,9 @@
+package com.company;
+
 /**
  * Class contains methods to define the type of triangle
  */
+
 public class TriangleDefine {
     /**
      * Method checks invalid sides
@@ -8,13 +11,20 @@ public class TriangleDefine {
      * @param a=side of triangle
      * @param b=side of triangle
      * @param c=side of triangle
-     * @return the result: valid/invalid triangle
      */
-    public String triangleExists(double a, double b, double c) {
+    public void triangleExists(double a, double b, double c) {
         if (a > b + c || b > a + c || c > a + b || a == 0 || b == 0 || c == 0) {
             System.out.println("Triangle is invalid. Try again");
+        } else if (a != b & b != c & c != a) {
+            System.out.println("The triangle has different sides");
+            if ((a * a + b * b == c * c) || (a * a + c * c == b * c) || (b * b + c * c == a * a))
+                System.out.println("The triangle is rectangular");
+            if (a * a + b * b > c * c || b * b + c * c > a * a || a * a + c * c > b * b)
+                System.out.println("The triangle is acute-angled");
+            if (a * a + b * b < c * c || b * b + c * c < a * a || a * a + c * c < b * b)
+                System.out.println("The triangle is obtuse");
+
         }
-        return ("The traingle is invalid.");
     }
 
     /**
@@ -22,14 +32,13 @@ public class TriangleDefine {
      *
      * @param a=side of triangle
      * @param b=side of triangle
-     * @param c=     side of triangle
-     * @return the result: if the triangle has different sides
+     * @param c=side of triangle
      */
-    public String triangleWithDifferentSides(double a, double b, double c) {
-        if (a != b & b != c & c != a) {
+    public void triangleWithDifferentSides(double a, double b, double c) {
+        if ((a > 0 && b > 0 && c > 0) && (a != b & b != c & c != a)) {
             System.out.println("The triangle has different sides");
         }
-        return ("The triangle has different sides");
+
     }
 
     /**
@@ -38,13 +47,11 @@ public class TriangleDefine {
      * @param a=side of triangle
      * @param b=side of triangle
      * @param b=side of triangle
-     * @return the result: if the triangle is isosceles
      */
-    public String triangleIsosceles(double a, double b, double c) {
-        if ((a == b && a != b && b != c) || (b == c && b != a && c != a) || (a == c && a != b && c != b)) {
+    public void triangleIsosceles(double a, double b, double c) {
+        if ((a > 0 && b > 0 && c > 0) && ((a == b && a != c && b != c) || (b == c && b != a && c != a) || (a == c && a != b && c != b))) {
             System.out.println("The triangle is isosceles");
         }
-        return ("The triangle is isosceles");
     }
 
     /**
@@ -53,13 +60,11 @@ public class TriangleDefine {
      * @param a=side of triangle
      * @param b=side of triangle
      * @param c=side of triangle
-     * @return the reult:if the triangle is equilateral
      */
-    public String triangleEquilateral(double a, double b, double c) {
-        if ((a == b) && (b == c) && (a == c)) {
+    public void triangleEquilateral(double a, double b, double c) {
+        if ((a > 0 && b > 0 && c > 0) && ((a == b) && (b == c) && (a == c))) {
             System.out.println("The triangle is equilateral");
         }
-        return ("The triangle is equilateral");
 
     }
 }
